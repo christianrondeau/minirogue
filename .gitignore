@@ -1,3 +1,9 @@
+# Build
+build/
+
+# Node
+node_modules/
+
 # Vim
 *.sw[a-p]
 
