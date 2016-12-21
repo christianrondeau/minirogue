@@ -2,7 +2,7 @@
   "name": "rogue",
   "version": "1.0.0",
   "description": "A console roguelike for small devices",
-  "main": "src/main.ts",
+  "main": "build/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/christianrondeau/rogue",
   "devDependencies": {
+    "@types/node": "^6.0.52",
     "gulp": "^3.9.1",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-tslint": "^7.0.1",
