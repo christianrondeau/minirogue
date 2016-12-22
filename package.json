@@ -2,11 +2,12 @@
   "name": "rogue",
   "version": "1.0.0",
   "description": "A console roguelike for small devices",
-  "main": "build/main.js",
+  "main": "out/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-		"build": "./node_modules/tslint/bin/tslint src/**/*.ts && node node_modules/typescript/bin/tsc",
-		"start": "node build/main.js"
+    "test": "mocha --opts mocha.opts",
+    "test:watch": "mocha --opts mocha.opts --watch",
+    "build": "./node_modules/tslint/bin/tslint src/**/*.ts && node node_modules/typescript/bin/tsc",
+    "start": "node out/src/main.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,16 @@
   },
   "homepage": "https://github.com/christianrondeau/rogue",
   "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.34",
     "@types/node": "^6.0.52",
+    "@types/sinon": "^1.16.33",
+    "@types/sinon-chai": "^2.7.27",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
+    "ts-node": "^1.7.2",
     "tslint": "^4.1.1",
     "typescript": "^2.1.4"
   }

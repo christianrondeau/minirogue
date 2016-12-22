@@ -1,4 +1,5 @@
 # Build
+out/
 build/
 
 # Node

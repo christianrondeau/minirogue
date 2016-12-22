@@ -1,10 +1,6 @@
-if (!process.stdout.isTTY)
-	throw "Not a TTY";
+///<reference path="./types/node.process.d.ts" />
 
+import { Game } from "./game";
 
-console.log("Rogue (res: " + process.stdout.rows + "x" + process.stdout.columns + ")");
-
-process.stdout.on("resize", () => {
-	console.log("screen size has changed!");
-	console.log(`${process.stdout.columns}x${process.stdout.rows}`);
-});
+let game = new Game(<NodeJS.TermWritableStream>(process.stdout));
+game.start();
