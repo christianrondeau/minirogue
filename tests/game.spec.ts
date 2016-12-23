@@ -3,6 +3,7 @@
 import { Game } from '../src/game';
 import * as blessed from 'blessed';
 
+import * as mocha from 'mocha';
 import * as chai from 'chai';
 import * as sinon from 'sinon';
 import * as sinonChai from 'sinon-chai';
@@ -15,7 +16,7 @@ describe('Game', () => {
 	let game: Game;
 
 	beforeEach(() => {
-		// process = sinon.createStubInstance(NodeJS.TermWritableStream);
+		screen = sinon.createStubInstance(blessed.Widgets.Screen);
 		game = new Game(screen as blessed.Widgets.Screen);
 	});
 
