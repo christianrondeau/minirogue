@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/christianrondeau/rogue",
   "devDependencies": {
+    "@types/blessed": "^0.1.4",
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.34",
     "@types/node": "^6.0.52",
@@ -36,5 +37,8 @@
     "ts-node": "^1.7.2",
     "tslint": "^4.1.1",
     "typescript": "^2.1.4"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81"
   }
 }
