@@ -1,10 +1,8 @@
 ///<reference path="./types/node.process.d.ts" />
 
 import { Game } from "./game";
-import * as blessed from 'blessed';
+import { Renderer } from "./renderer";
 
-let game = new Game(blessed.screen({
-	smartCSR: true
-}));
-
+let renderer = new Renderer();
+let game = new Game(renderer);
 game.start();

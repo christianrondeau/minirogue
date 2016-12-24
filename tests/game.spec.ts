@@ -1,26 +1,30 @@
-///<reference path="../src/types/node.process.d.ts" />
+import { Game } from "../src/game";
+import { Renderer } from "../src/renderer";
 
-import { Game } from '../src/game';
-import * as blessed from 'blessed';
-
-import * as mocha from 'mocha';
-import * as chai from 'chai';
-import * as sinon from 'sinon';
-import * as sinonChai from 'sinon-chai';
+import * as mocha from "mocha";
+import * as chai from "chai";
+import * as sinon from "sinon";
+import * as sinonChai from "sinon-chai";
 
 const expect = chai.expect
 chai.use(sinonChai);
 
-describe('Game', () => {
-	let screen: any; //Sinon.SinonStub;
+describe("game", () => {
+	let renderer: any;
 	let game: Game;
 
 	beforeEach(() => {
-		screen = sinon.createStubInstance(blessed.Widgets.Screen);
-		game = new Game(screen as blessed.Widgets.Screen);
+		renderer = sinon.createStubInstance(Renderer);
+		game = new Game(<Renderer>renderer);
 	});
 
-	it('should work', () => {
-		expect(game).to.exist;
-	})
+	describe("start", () => {
+		beforeEach(() => {
+			game.start();
+		});
+
+		it("should show a box", () => {
+			expect(renderer.start).to.have.been.called;
+		});
+	});
 });
